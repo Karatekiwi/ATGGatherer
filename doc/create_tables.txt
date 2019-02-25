@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS poi (id serial primary key, wiki_id text, name text, latitude decimal, longitude decimal, language text, country text);		
+CREATE TABLE IF NOT EXISTS section (id serial primary key, pois_id integer references poi(id) ON DELETE CASCADE, header text, content text, category text);
+CREATE TABLE IF NOT EXISTS settings (id serial primary key, update_id text);
+CREATE TABLE IF NOT EXISTS login (id serial NOT NULL, username text, password text);
+CREATE TABLE log (id serial NOT NULL, date bigint, log_text text);
+
+-- Stella23
+INSERT INTO login values(1, 'admin', '603a639b8b742b1375dfbaaa82b98916d12a4f614840761da2dbeb8b939ffb7b');
+
+
+CREATE INDEX lang on poi (language);
+CREATE INDEX pois_id on section (pois_id);
+CREATE INDEX cnt on poi (country);

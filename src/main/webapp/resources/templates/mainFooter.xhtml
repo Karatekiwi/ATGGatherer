@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+	  xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      
+      
+    <body>
+	     <ui:composition>
+		    <h:form>
+		    	<div id="mainFooter">
+					&#169; Manuela Weilharter | Last updated: 06.11.2014
+				</div>
+				<div>
+					<h:commandLink action="#{holderBean.setEnglish}">
+						<h:graphicImage id="en" url="/resources/images/en.png" alt="en" styleClass="en" rendered="#{!holderBean.english}"/>
+						</h:commandLink>
+					<h:commandLink action="#{holderBean.setGerman}">
+						<h:graphicImage id="de" url="/resources/images/de.png" alt="de" styleClass="de" rendered="#{holderBean.english}"/>
+					</h:commandLink>
+				</div>	
+			</h:form>
+	    </ui:composition>
+    </body>
+</html>

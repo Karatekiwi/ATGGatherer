@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<h:outputStylesheet library="css" name="style.css" />
+		<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
+		
+		<title>ATG Administration</title>
+	</h:head>
+	
+	
+	<h:body>		
+		<div id="container">
+			<div id="header_login">
+					<h1>Automatic Tourist Guide</h1>
+					<h2>Administration</h2>		
+			</div>
+			
+		    <div id="index">
+		     	<h:form> 
+		     		<p:tabView styleClass="loginCenter">
+		     			<p:tab>
+			     			<!-- overrides title on tab-->
+					        <f:facet name="title">
+					         	<h:panelGrid columns="2">
+						        	<p:graphicImage value="/resources/images/user.png"/>
+					               	<h:outputText value="Login" styleClass="login_tab"/>
+				               </h:panelGrid>
+				            </f:facet>
+				            
+					        <p><p:inputText id="username" value="#{userBean.username}" placeholder="Username"/></p>
+					        <p:watermark for="username" value="Username"/>
+					        <p><p:password id="password" value="#{userBean.password}" placeholder="Password"/></p>
+					        <p:watermark for="password" value="Password"/>
+					        
+					        <p class="submit"><p:commandButton value="Login" styleClass="loginBtn" action="#{userBean.login}"/></p>
+							<p:messages id="messages" autoUpdate="true"/> 
+						</p:tab>
+							
+						<p:tab>
+							<f:facet name="title">
+								<h:panelGrid columns="2">
+									<p:graphicImage value="/resources/images/info.png"/>
+					               <h:outputText value="About" styleClass="login_help"/>
+				                </h:panelGrid>
+				            </f:facet>
+				            
+							<p>This is the administration panel for the Automatic Tourist Guide, a master thesis project at Vienna's University of Technology. 
+							<br></br> <br></br> <br></br> 
+							&#169; Manuela Weilharter</p>
+						</p:tab>
+					</p:tabView>
+				</h:form>
+		    </div> 
+	    </div>
+	</h:body>
+</html>
+
+
+

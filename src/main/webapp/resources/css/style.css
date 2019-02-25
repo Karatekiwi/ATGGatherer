@@ -1,0 +1,394 @@
+html  { 
+    background: 		url(/resources/images/bg.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	font-family: Arial;
+}
+
+.loginCenter {
+	margin: 			0 auto;
+	font-size: 			14px !important;
+	position:			relative;
+	width: 				400px;
+	margin-top:			40px;
+}
+
+
+
+.map_link{
+	color: blue !important;
+}
+
+.tooltip {
+	font-size: 13px;
+	width: 400px;
+}
+
+
+
+
+.ui-tabs {
+	border-style: none !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+	background: none;
+}
+
+.ui-tabs-panel {
+	background-color: white !important;
+	height: 200px;
+	color: black;
+}
+
+.ui-datatable tr.ui-datatable-even:hover, .ui-datatable tr.ui-datatable-odd:hover {
+    background-color: #aac1e0 !important;
+}
+
+.ui-datatable .ui-state-highlight {
+	background-color: #aac1e0 !important;
+	color: white;
+}
+
+
+
+.ui-tabmenu-nav {
+	margin: 0px !important;
+	padding: 0px !important;
+	border: 0px !important;
+	background: none;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+}
+
+
+
+.ui-tabmenuitem {
+	width: 198px !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	border-left: 0px !important;
+	border-top: 0px !important;
+	border-bottom: 0px !important;
+	border-right: 1px solid black !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+}
+
+#header_login { 
+	text-align: 		center;
+	margin-top: 		12%;
+}
+
+#header_login h2{
+	color: white;
+	font-size: 20px;
+}
+
+.ui-tabs-nav {
+	margin: 0px !important;
+	padding: 0px !important;
+	border: 0px !important;
+	background: none;
+}
+
+
+#index .ui-inputfield {
+	width: 340px;
+	margin-bottom: 10px !important;
+	margin-top: 5px !important;
+	height: 25px;
+	padding-left: 10px !important;
+}
+
+
+#header_login h1{
+	color: white;
+}
+
+.loginBtn {
+	margin-top: 20px;
+}
+
+.login_tab {
+	margin-left: 10px;
+	display:inline-block !important; 
+	vertical-align:middle !important;
+	
+}
+
+.login_help {
+	margin-left: 10px;
+	display:inline-block;
+}
+
+
+#tabmenu {
+	display: 		block;
+	margin:			auto !important;
+}
+
+
+#scrollpane {
+	display: 	block;
+	margin:		auto !important;
+	background: white !important;
+	height: 	640px;
+	padding: 	30px;
+}
+
+
+.ui-datatable-odd {
+	background-color: white !important;	
+}
+
+
+.ui-menuitem-text {
+	font-size: 			14px;
+	float: 				none!important;
+}
+
+.logout-link {
+	color: 				white;
+	position:			absolute;
+	margin: 			0 auto;
+	right:				20px;
+	top: 				37px;
+	font-size: 			13px !important;
+}
+
+.ui-dialog-content {
+	background-color: white !important;
+	color: black !important;
+	font-size: 14px !important;
+}
+
+.ui-icon.ui-confirm-dialog-severity {
+    background-position: 0 0 !important; 
+    background-image: none !important;
+    width: 0px;
+    height: 0px;
+}
+
+.ui-dialog-title {
+	color: white !important;
+	text-shadow: none !important;
+}
+
+.ui-datatable-even {
+	background: white !important;
+	color: black;
+}
+
+.ui-datatable-empty-message {
+	background: white !important;
+	color: black;
+}
+
+.jqplot-title {
+	font-family: Arial !important;
+	font-size: 14px !important;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+.ui-paginator-page {
+	background: white !important;
+	color: black !important;
+}
+
+.ui-datatable-odd {
+ 	background: white !important;
+ 	color: black;
+}
+
+.ui-dialog-titlebar {
+	border-bottom: 0px !important;
+}
+
+.en {
+	float: 			right;
+	margin-top: 	10px;
+}
+
+.de {
+	float: 			right;
+	margin-top: 	10px;
+}
+
+.googleMap{
+	 width: 			940px;
+	 height: 			650px;
+	 text-align: 		center; 
+	 margin:			0 auto;
+ }
+
+.ui-selectonemenu-label {
+	font-size: 13px !important;
+}
+
+.ui-selectonemenu {
+	width: 520px !important;
+}
+
+.ui-selectonemenu-item {
+	font-size: 13px !important;
+}
+
+
+
+.ui-outputlabel {
+	color: black;
+	font-size: 13px !important;	
+}
+
+.ui-confirm-dialog {
+	width: 400px !important;
+}
+
+.scrollpane_log {
+   	height:  450px !important;
+   	width: 910px !important;
+   	padding: 10px;
+}
+
+.ui-scrollpanel {
+	background-color: white !important;
+	color: black;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+
+
+.ui-button {
+	margin-top: 20px;
+	height: 30px !important;
+	font-size: 14px !important;
+	margin-right: 10px;
+}
+
+#mainHeader_logo {
+	margin-top: 	30px;
+	font-size: 		30px;
+	position: 		relative;
+	overflow: 		hidden;
+	font-weight: 	bold;
+	color: 			white;
+}
+
+#mainHeader_text {
+	color: 			white;
+	margin-bottom: 	10px;
+	font-size: 		12px;
+	margin-top: 	10px;
+	margin-bottom: 	20px;
+}
+
+#container {
+	width: 	1000px;
+	margin: 15px auto;
+}
+
+
+
+#mainFooter {
+	margin-top: 	10px;
+	float:			left;
+	color: 			black;
+	display: 		block;
+	text-align: 	center;
+	font-size: 		11px;
+}
+
+
+#mainHeader_hello {
+	color: 				white;
+	position:			absolute;
+	font-size: 			15px !important;
+	margin: 			0 auto;
+	right:				20px;
+	top: 				15px;
+	
+}
+
+.dialogPoiInfo .ui-dialog-title{
+	font-size: 			16px;
+	display: 			block !important;
+	margin: 			0 auto 0 auto !important;
+	width: 				660px !important;
+	text-align: 		center; 
+	color: 				white;
+	text-shadow: 		0px 0px 2px #5dd5b2, -1px -1px #000;
+}
+
+
+
+.overview {
+	background-image: url(/resources/images/overview.png) !important;
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.action {
+	background-image: url(/resources/images/action.png) !important;
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.map {
+	background-image: url(/resources/images/map.png) !important;
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+
+.poi {
+	background-image: url(/resources/images/poi.png) !important;
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.log {
+	background-image: url(/resources/images/logs.png) !important;
+    height:30px;
+    width:30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.scrollpane_workingon {
+	background:	 white !important;
+	border: 	0 !important;
+	height: 	500px;
+}
+
+.ui-fieldset {
+	background: white !important;
+	height: 	600px !important;
+	border: 	none !important;
+	
+}
+
+.ui-scrollpanel-content {
+	color: black !important;
+	font-size: small;
+}
+

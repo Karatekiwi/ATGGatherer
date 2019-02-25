@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	
+	<h:head>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<h:outputStylesheet library="css" name="style.css" />
+		<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
+		
+		<title>ATG Administration</title>
+	</h:head>
+
+
+	<h:body id="app">
+		<div id="container">
+			<div>
+				<ui:insert name="header" >
+				  <ui:include src="/resources/templates/mainHeader.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    <div>
+				<ui:insert name="tabmenu"  >
+				  <ui:include src="/resources/templates/mainTabs.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    
+		    
+		    <div>
+		    	<p:scrollPanel id="scrollpane" mode="native"> 	
+			    	<h:form id="form1">		
+			    		<h:panelGrid columns="2">     
+			    			<p:outputLabel for="category" value="Countries:"/>
+			    			<p:selectOneRadio id="category" value="#{gathererBean.country}" layout="grid" columns="5">
+			    				<f:selectItem itemLabel="Vienna" itemValue="Vienna" />
+			                	<f:selectItem itemLabel="Austria" itemValue="Buildings and structures in Austria‎" />
+			                	<f:selectItem itemLabel="Switzerland" itemValue="Buildings and structures in Switzerland" />
+					            <f:selectItem itemLabel="Germany" itemValue="Buildings and structures in Germany" />
+					            <f:selectItem itemLabel="Liechtenstein" itemValue="Buildings and structures in Liechtenstein" />
+			                </p:selectOneRadio>
+				                
+					        <p:commandButton value="Update" id="update" actionListener="#{gathererBean.updateData}">
+				            	<p:confirm header="Confirmation" message="Warning: duration about 10 minutes
+				            	for the medium, 45 minutes for the large and up to 2 hours for the complete dataset. Update data?" icon="ui-icon-alert"/>	
+				            </p:commandButton>
+				            
+					        <p:commandButton value="Reset Database" id="reset" actionListener="#{gathererBean.resetTablePois}">
+				            	<p:confirm header="Confirmation" message="Are you sure you want to reset the POI database? " icon="ui-icon-alert" />	
+				            </p:commandButton>		
+				        </h:panelGrid>
+			            
+			            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+					        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					    </p:confirmDialog>
+					    
+					    <p:tooltip for="update" value="This button can be used to query all available 
+				            POIs from Wikipedia and save them into the database." styleClass="tooltip"/>
+				        <p:tooltip for="reset" value="This button can be used to reset the database. All POIs will be dropped. 
+				            An update is neccessary to fill the database again." styleClass="tooltip"/>		
+				            
+					    <br /><br /> 
+						<p:spotlight id="idsl" blocked="#{!gathererBean.updateComplete}" widgetVar="sl">
+							<h:panelGrid columns="1">  
+								<p:outputLabel value="Log"/>
+						    	<p:scrollPanel styleClass="scrollpane_log" mode="native"> 	
+						    		<pre><h:outputText id="update_text" value="#{gathererBean.status}" styleClass="preformatted"/></pre>
+						    	</p:scrollPanel>
+					    	</h:panelGrid>
+	    				</p:spotlight>
+	    				<p:poll interval="1" update="idsl" widgetVar="poll" autoStart="false" listener="#{gathererBean.checkIfDone}"/>
+					 </h:form>  
+			    </p:scrollPanel>
+		    	
+		    </div>
+		    
+	   		<div>
+				<ui:insert name="footer" >
+				  <ui:include src="/resources/templates/mainFooter.xhtml" />
+				</ui:insert>
+		    </div>
+	    </div>
+	    
+	</h:body>
+	
+</html>

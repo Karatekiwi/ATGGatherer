@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+    
+  	<managed-bean>
+	    <managed-bean-name>userBean</managed-bean-name>
+	    <managed-bean-class>controller.UserController</managed-bean-class>
+	    <managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+  	<managed-bean>
+	    <managed-bean-name>poiBean</managed-bean-name>
+	    <managed-bean-class>controller.PoiController</managed-bean-class>
+	    <managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+  	<managed-bean>
+	    <managed-bean-name>mapBean</managed-bean-name>
+	    <managed-bean-class>controller.MapController</managed-bean-class>
+	    <managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+  	<managed-bean>
+	    <managed-bean-name>gathererBean</managed-bean-name>
+	    <managed-bean-class>controller.GathererController</managed-bean-class>
+	    <managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+  	<managed-bean>
+	    <managed-bean-name>logBean</managed-bean-name>
+	    <managed-bean-class>controller.LogController</managed-bean-class>
+	    <managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+  	<managed-bean>
+	    <managed-bean-name>holderBean</managed-bean-name>
+	    <managed-bean-class>controller.PoiHolder</managed-bean-class>
+	    <managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+</faces-config>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<h:outputStylesheet library="css" name="style.css" />
+		<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
+		
+		<title>ATG Administration</title>
+	</h:head>
+
+
+	<h:body id="app">
+		<div id="container">
+			<div>
+				<ui:insert name="header" >
+				  <ui:include src="/resources/templates/mainHeader.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    <div>
+				<ui:insert name="tabmenu"  >
+				  <ui:include src="/resources/templates/mainTabs.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    <div>
+		    	<p:scrollPanel id="scrollpane" mode="native"> 							
+					<h:form id="form">
+					
+						<p:dataTable var="poi" value="#{poiBean.pois}" paginator="true" rows="20" selectionMode="single" selection="#{poiBean.selectedPoi}" 
+							onRowSelectComplete="poiDialog.show()" rowKey="#{poi.id}" paginatorPosition="bottom" styleClass="poisTable" sortBy="#{poi.name}">
+							<p:ajax event="rowSelect" update=":form1" oncomplete="PF('poiDialog').show()"/>
+						 
+						 	<p:column headerText="Wikpedia ID" style="width:70px;">
+						        <h:outputText value="#{poi.wikiId}" />
+						    </p:column>
+						    
+						    <p:column headerText="Name" sortBy="#{poi.name}">
+						        <h:outputText value="#{poi.name}" />
+						    </p:column>
+						 
+						    <p:column headerText="Latitude" style="width:120px;">
+						        <h:outputText value="#{poi.latitude}" />
+						    </p:column>
+						 
+						    <p:column headerText="Longitude" style="width:120px;">
+						        <h:outputText value="#{poi.longitude}" />
+						    </p:column>
+						    
+						    <p:column headerText="Country" style="width:60px;">
+						        <h:outputText value="#{poi.country}" />
+						    </p:column>
+						    					    
+						</p:dataTable>
+					</h:form>
+					
+					<h:form id="form1">	
+						<p:dialog id="dialog" header="#{poiBean.selectedPoi.name} (#{poiBean.selectedPoi.latitude}, #{poiBean.selectedPoi.longitude})" 
+							widgetVar="poiDialog" resizable="true" modal="true" width="700" height="500" showEffect="drop" styleClass="dialogPoiInfo">  				        
+					        <h:outputText value="#{poiBean.getFormattedText()}" escape="false" />        
+					    </p:dialog> 
+						
+					</h:form>
+		    	</p:scrollPanel>
+		    </div>
+		    
+		     <div>
+				<ui:insert name="footer" >
+				  <ui:include src="/resources/templates/mainFooter.xhtml" />
+				</ui:insert>
+		    </div>
+	    </div>
+	</h:body>
+	
+</html>

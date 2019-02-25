@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<h:outputStylesheet library="css" name="style.css" />
+		<link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon" />
+		
+		<title>ATG Administration</title>
+	</h:head>
+
+
+	<h:body id="app">
+		<div id="container">
+			<div>
+				<ui:insert name="header" >
+				  <ui:include src="/resources/templates/mainHeader.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    <div>
+				<ui:insert name="tabmenu"  >
+				  <ui:include src="/resources/templates/mainTabs.xhtml" />
+				</ui:insert>
+		    </div>
+		    
+		    <div>
+		    	<p:scrollPanel id="scrollpane" mode="native"> 	
+		    	
+		    		<p:dataTable styleClass="logTable" var="log" value="#{logBean.logs}" paginator="true" rows="10" paginatorPosition="bottom">					
+					    <p:column headerText="Id">
+					        <h:outputText value="#{log.id}" />
+					    </p:column>
+					    
+					    <p:column headerText="Date">
+					        <h:outputText value="#{log.dateString}" />
+					    </p:column>
+					    
+					    <p:column headerText="Text">
+					        <h:outputText value="#{log.text}" />
+					    </p:column>
+					</p:dataTable>
+		    	
+		    							
+					<p:chart type="line" model="#{logBean.dateModel}" style="height:300px;width:400px;margin-top:30px;"/>
+		    	</p:scrollPanel>
+		    </div>
+		    
+		     <div>
+				<ui:insert name="footer" >
+				  <ui:include src="/resources/templates/mainFooter.xhtml" />
+				</ui:insert>
+		    </div>
+	    </div>
+	    
+	</h:body>
+	
+</html>

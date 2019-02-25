@@ -1,0 +1,14 @@
+/target/
+.classpath
+.project
+.settings/
+bin/
+entities.png
+*.ucls
+*.aird
+Procfile
+system.properties
+lib/
+*.class
+
+
